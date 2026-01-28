@@ -1,1 +1,61 @@
 
+<!DOCTYPE html>
+<html style="margin: 0; padding: 0; height: 100%; font-family: Arial, sans-serif;">
+<body style="margin: 0; padding: 0; display: flex; height: 100vh; background-color: #f4f4f9;">
+
+    <div style="width: 250px; background-color: #2c3e50; color: white; display: flex; flex-direction: column;">
+        
+        <div style="padding: 20px; text-align: center; font-size: 24px; font-weight: bold; border-bottom: 1px solid #34495e;">
+            MyDashboard
+        </div>
+
+        <div style="padding: 20px;">
+            <a href="#" onclick="alert('Clicked Home')" style="display: block; color: #bdc3c7; text-decoration: none; padding: 10px; margin-bottom: 5px; border-radius: 4px; cursor: pointer;">
+                🏠 Home
+            </a>
+            <a href="#" onclick="alert('Clicked Analytics')" style="display: block; color: white; text-decoration: none; padding: 10px; margin-bottom: 5px; background-color: #34495e; border-radius: 4px; cursor: pointer;">
+                📊 Analytics
+            </a>
+            <a href="#" onclick="alert('Clicked Users')" style="display: block; color: #bdc3c7; text-decoration: none; padding: 10px; margin-bottom: 5px; border-radius: 4px; cursor: pointer;">
+                👥 Users
+            </a>
+            <a href="#" onclick="alert('Clicked Settings')" style="display: block; color: #bdc3c7; text-decoration: none; padding: 10px; margin-bottom: 5px; border-radius: 4px; cursor: pointer;">
+                ⚙️ Settings
+            </a>
+        </div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column;">
+
+        <div style="background-color: white; padding: 15px 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center;">
+            <h2 style="margin: 0; color: #333;">Dashboard Overview</h2>
+            <button onclick="alert('Logged Out')" style="padding: 8px 16px; background-color: #e74c3c; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">
+                Logout
+            </button>
+        </div>
+
+        <div style="padding: 30px; overflow-y: auto;">
+            
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                
+                <div onclick="alert('Views Details')" style="flex: 1; min-width: 200px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: center; cursor: pointer;">
+                    <h3 style="margin: 0 0 10px 0; color: #7f8c8d; font-size: 16px;">Total Views</h3>
+                    <p style="margin: 0; font-size: 32px; font-weight: bold; color: #2c3e50;">45.2k</p>
+                </div>
+
+                <div onclick="alert('Sales Details')" style="flex: 1; min-width: 200px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: center; cursor: pointer;">
+                    <h3 style="margin: 0 0 10px 0; color: #7f8c8d; font-size: 16px;">Sales</h3>
+                    <p style="margin: 0; font-size: 32px; font-weight: bold; color: #27ae60;">$12,450</p>
+                </div>
+
+                <div onclick="alert('User Details')" style="flex: 1; min-width: 200px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: center; cursor: pointer;">
+                    <h3 style="margin: 0 0 10px 0; color: #7f8c8d; font-size: 16px;">New Users</h3>
+                    <p style="margin: 0; font-size: 32px; font-weight: bold; color: #e67e22;">1,204</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
