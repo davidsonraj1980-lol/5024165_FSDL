@@ -1,0 +1,114 @@
+/* 1. Global Page Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    max-width: 800px; /* Keeps content easy to read */
+    margin: 0 auto;   /* Centers the page */
+    padding: 40px;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* 2. Headings */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #2980b9;
+    border-left: 5px solid #2980b9;
+    padding-left: 15px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* 3. Text & Paragraphs */
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+strong {
+    color: #c0392b; /* Bold text is red */
+}
+
+/* 4. Images (New!) */
+img {
+    max-width: 100%;  /* Ensures image doesn't overflow on small screens */
+    height: auto;     /* Maintains aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Nice drop shadow */
+    display: block;   /* Allows margin auto to center it */
+    margin: 20px auto;
+}
+
+/* 5. Tables (New!) */
+table {
+    width: 100%;           /* Table takes full width available */
+    border-collapse: collapse; /* Removes double borders */
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2c3e50; /* Dark header background */
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Zebra Striping: Makes every other row slightly gray */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover Effect: Highlights the row you are reading */
+tr:hover {
+    background-color: #e8f6f3;
+}
+
+/* 6. Links List */
+ul {
+    list-style-type: square; /* Square bullet points */
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+/* 7. Link Styling */
+a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1abc9c;
+    text-decoration: underline;
+}
+
+/* 8. Footer */
+footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 14px;
+}
