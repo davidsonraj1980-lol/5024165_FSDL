@@ -1,0 +1,171 @@
+/* Import a modern, clean font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.app-container {
+  min-height: 100vh;
+  /* 1. ANIMATED GRADIENT: Makes the background feel alive */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* The animation keyframes for the background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.title {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 600;
+  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+}
+
+/* 2. UNIFIED GLASS SEARCH PILL */
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 60px;
+  /* Wraps both input and button in one glass container */
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  border-radius: 50px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px 25px;
+  width: 300px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Make the placeholder text readable against the white glow */
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-button {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 12px 30px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.search-button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05); /* Slight pop out effect */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.cards-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* 3. UPGRADED GLASS CARDS WITH HOVER ANIMATION */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15); 
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3); 
+  backdrop-filter: blur(16px); 
+  -webkit-backdrop-filter: blur(16px); 
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  padding: 40px 30px;
+  width: 220px;
+  text-align: center;
+  color: white;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Make the cards float up when the mouse hovers over them */
+.glass-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 40px 0 rgba(31, 38, 135, 0.5);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.glass-card h2 {
+  margin-top: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.temp {
+  font-size: 56px;
+  font-weight: 600;
+  margin: 15px 0;
+  text-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Add this ONE line inside your existing .search-container block */
+.search-container {
+  /* ... your existing styles ... */
+  position: relative; /* ADD THIS LINE */
+  z-index: 50;
+}
+ 
+  
+/* Add all of this to the bottom of your file */
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%; /* Positions it right below the search bar */
+  left: 0;
+  width: 300px;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+  overflow: hidden;
+  z-index: 10; /* Ensures the dropdown floats OVER the weather cards */
+}
+
+.suggestion-item {
+  padding: 12px 20px;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease;
+  font-size: 16px;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.suggestion-subtext {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 8px;
+}
