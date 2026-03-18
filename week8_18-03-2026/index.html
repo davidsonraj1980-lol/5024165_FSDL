@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Precise Finance</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffdad6", "on-primary": "#ffffff", "on-error": "#ffffff", "secondary-fixed": "#a3f69c", "on-secondary-fixed": "#002204", "primary-fixed": "#d9e2ff", "secondary-fixed-dim": "#88d982", "surface-container-highest": "#cfe6f2", "secondary-container": "#a0f399", "inverse-on-surface": "#dff4ff", "primary-container": "#0d47a1", "background": "#f3faff", "tertiary-fixed-dim": "#ffb4ac", "on-secondary-fixed-variant": "#005312", "on-primary-fixed": "#001945", "on-tertiary": "#ffffff", "inverse-surface": "#1e333c", "surface-bright": "#f3faff", "surface-dim": "#c7dde9", "error-container": "#ffdad6", "surface-container-low": "#e6f6ff", "surface-container": "#dbf1fe", "outline": "#737783", "outline-variant": "#c3c6d4", "secondary": "#1b6d24", "on-primary-fixed-variant": "#00429c", "on-surface": "#071e27", "primary": "#003178", "on-tertiary-container": "#ffa59c", "on-error-container": "#93000a", "on-background": "#071e27", "on-primary-container": "#a1bbff", "surface": "#f3faff", "error": "#ba1a1a", "surface-tint": "#2b5bb5", "surface-container-high": "#d5ecf8", "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#93000e", "on-surface-variant": "#434652", "on-tertiary-fixed": "#410003", "tertiary": "#720009", "inverse-primary": "#b0c6ff", "on-secondary-container": "#217128", "primary-fixed-dim": "#b0c6ff", "surface-variant": "#cfe6f2", "surface-container-lowest": "#ffffff", "tertiary-container": "#9d0010"
+            },
+            fontFamily: { "headline": ["Inter"], "body": ["Inter"], "label": ["Inter"] }
+          }
+        }
+      }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3faff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+  </head>
+  <body class="text-on-surface">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
