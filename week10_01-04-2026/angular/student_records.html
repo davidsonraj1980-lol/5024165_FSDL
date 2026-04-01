@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AngularJS Student Records</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 40px; max-w-3xl; margin: auto; }
+        .form-group { margin-bottom: 15px; }
+        input { padding: 8px; width: 250px; }
+        .error-text { color: red; font-size: 13px; margin-left: 10px; }
+        button { padding: 8px 15px; background-color: #003178; color: white; border: none; cursor: pointer; border-radius: 4px; }
+        button:disabled { background-color: #cccccc; cursor: not-allowed; }
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f3faff; color: #003178; }
+        .delete-btn { background-color: #ba1a1a; padding: 5px 10px; }
+    </style>
+</head>
+
+<body ng-app="studentApp" ng-controller="studentCtrl">
+
+    <h2>Student Record Application</h2>
+
+    <form name="studentForm" ng-submit="addStudent()" novalidate>
+        
+        <div class="form-group">
+            <label>Student Name: </label><br>
+            <input type="text" name="sName" ng-model="newStudent.name" required>
+            
+            <span class="error-text" ng-show="studentForm.sName.$touched && studentForm.sName.$error.required">
+                Name is required.
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>Roll Number: </label><br>
+            <input type="text" name="sRoll" ng-model="newStudent.roll" required ng-pattern="/^[0-9]+$/">
+            
+            <span class="error-text" ng-show="studentForm.sRoll.$touched && studentForm.sRoll.$error.required">
+                Roll Number is required.
+            </span>
+            <span class="error-text" ng-show="studentForm.sRoll.$touched && studentForm.sRoll.$error.pattern">
+                Only numbers are allowed.
+            </span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" ng-disabled="studentForm.$invalid">Add Student</button>
+        </div>
+    </form>
+
+    <hr>
+
+    <h3>Enrolled Students ({{ students.length }})</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Roll No.</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="student in students">
+                <td>{{ student.roll }}</td>
+                <td>{{ student.name }}</td>
+                <td><button class="delete-btn" ng-click="deleteStudent($index)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var app = angular.module('studentApp', []);
+
+        app.controller('studentCtrl', function($scope) {
+            
+            // 1. Initial State: An array to hold our student records
+            $scope.students = [
+                { name: "Paul Davidson", roll: "101" },
+                { name: "Alice Smith", roll: "102" }
+            ];
+
+            // 2. An empty object to hold the data being typed into the form
+            $scope.newStudent = {};
+
+            // 3. EVENT FUNCTION: Add a student
+            $scope.addStudent = function() {
+                // Push the new student object into the array
+                $scope.students.push({
+                    name: $scope.newStudent.name,
+                    roll: $scope.newStudent.roll
+                });
+
+                // Clear the form fields after saving
+                $scope.newStudent = {};
+                
+                // Reset the form validation state so errors disappear
+                $scope.studentForm.$setPristine();
+                $scope.studentForm.$setUntouched();
+            };
+
+            // 4. EVENT FUNCTION: Delete a student
+            $scope.deleteStudent = function(index) {
+                // Remove 1 item from the array at the specified index
+                $scope.students.splice(index, 1);
+            };
+        });
+    </script>
+
+</body>
+</html>
