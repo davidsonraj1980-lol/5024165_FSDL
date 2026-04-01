@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AngularJS Hello World</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" style="font-family: sans-serif; padding: 40px;">
+
+    <div ng-controller="HelloWorldController">
+        
+        <h2>AngularJS Task</h2>
+
+        <label>Type a message: </label>
+        <input type="text" ng-model="greeting" style="padding: 5px; font-size: 16px;">
+
+        <hr>
+
+        <h1>{{ greeting }}</h1>
+        
+    </div>
+
+    <script>
+        // Define the application
+        var app = angular.module('myApp', []);
+
+        // Define the controller and set the initial State using $scope
+        app.controller('HelloWorldController', function($scope) {
+            // This is the default text that shows up immediately
+            $scope.greeting = "Hello World!";
+        });
+    </script>
+
+</body>
+</html>
